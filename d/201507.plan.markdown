@@ -1,0 +1,40 @@
+---
+title: gjn - plan file of July 2015
+author: gjn
+date: 2015-07-31
+---
+
+# Thursday, July 30th 2015
+
+## MAP
+
+* Reviewed [important re-factoring](https://github.com/geoadmin/mf-geoadmin3/pull/2539) by teo. I'm reminded once again that there are reasons to ignore the DRY principle. Sometimes, it makes more sense to treat semantically different things with different code, even if it sometimes means duplicatin some code. Understandability trumps DRY principle most of the time. Code is much cleaner now. Events are easier to follow. Understanding is increased.
+* Reviewed first 3D integration by teo. Masterful.
+* Reviewed [cusomisation from 3rd  parties](https://github.com/geoadmin/mf-geoadmin3/pull/2500). Nice to see getting more and more from 3rd parties.
+* [Created PR](https://github.com/geoadmin/mf-geoadmin3/pull/2541) to reduce size and complexity of Makefile. It always feels good to remove code.
+* Our kml test (e2e) still fails from time to time. Need to look deeper. Prepared another PR to adapt timout.
+
+## API
+
+* Analysed Jenkins build failure because of new model GeolGenKarteGGK200. clm was able to [fix it](https://github.com/geoadmin/mf-chsdi3/pull/1586). Child models must have same primary key defined as parent model; otherwise `get_primary_key_column()` function fails. Duh.
+* Fix another simple bug that broke the build. We need to be more careful when creating PR and merging them. Damn.
+
+## 3D
+
+* Worked on in-time coordinate transformation (EPSG:21781 to WGS84) during data import to database. Good to finally dive into this datum mess. Still need to decide if to use distortion grids or not.
+* Launched creation of level 18 tiles in testing zone - balzing fast right now (more than 10 tiles per second). [Something is still fishy](https://github.com/geoadmin/3d-forge/issues/102), process is not complete, yet no more tiles are calculated.
+* Analysed Cesium debug tile coordinates display and fixed it. They are not consistent with tileschemes in debug tools.
+* [Created PR for Cesium](https://github.com/AnalyticalGraphicsInc/cesium/pull/2910) with the above fix
+* [Added skipped tile counter](https://github.com/geoadmin/3d-forge/pull/101)
+
+## Support
+
+* Answered request regarding Height service. Yes, different models give different results.
+* Answered request regarding API global variable conflict, [created issue](https://github.com/geoadmin/mf-chsdi3/issues/1585). We are in trouble as we polute the global space. This should not happen.
+* Answered request regarding code sample of opacity slider
+* Answered request regarding quadindex creation in postgis
+* Tried to reach Mr. C. (ZV) by phone for API update troubles. Couldn't be reached. Left a message.
+
+## Tools
+
+* Installed vimium in home office chrome. What a blast!

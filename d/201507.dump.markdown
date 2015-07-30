@@ -1,0 +1,20 @@
+---
+title: gjn - dump file of July 2015
+author: gjn
+date: 2015-07-31
+---
+
+# Top 5
+
+* Mr. C from ZV
+* varnish caching per vhost patch -> reply Cédric
+* 3d service - transformations during import
+* varnish update to 4
+* jenkins on new instance and make it more stable
+
+# Next 10
+
+* static bod
+
+# The rest
+
