@@ -6,14 +6,16 @@ date: 2015-07-31
 
 # Top 5
 
-* Mr. C from ZV
-* varnish caching per vhost patch -> reply Cédric
+* testapp starts with tlm
 * 3d service - transformations during import
-* varnish update to 4
 * jenkins on new instance and make it more stable
+* 3d multiprocessing
+* Cesium PR
 
 # Next 10
 
+* varnish caching per vhost patch -> reply Cédric
+* varnish update to 4
 * static bod
 
 # The rest

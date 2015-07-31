@@ -4,6 +4,46 @@ author: gjn
 date: 2015-07-31
 ---
 
+# Friday, July 31st 2015
+
+## MAP
+
+* SEO still not very good. Our trust in googles promise to execute Javascript
+  turned out to be misplaced. It doesn't happen. Or not everytime.
+
+* Looked at new category integration of new swissnames3D search index. Looks good.
+  [Needs small patch in front-end](https://github.com/geoadmin/mf-geoadmin3/pull/2544)
+
+## 3D
+
+* ogr2ogr is not enough for us to transfer from 2056 to WGS84 because it's missing
+  the exact transformation using the geoid. Heights will be wrong. Geodesy
+  departement will create a tool for us. Ah, how I like the datum/projection
+  hell. Anyway, Geodosey are masters of hell. They'll help us out with a tool
+  that we can scale up in the cloud to take care of these transformations.
+
+  I was able to test the tool that they were providing us. It runs well on our
+  servers. Long live Mono! Now it needs to be integrated into our process
+  and enabled in a distributed way.
+
+* Python `pool.map_async` (and related function) are actually not lazy iterating
+  over the passed iterator. They create a full list internally before passing them to
+  the process queue. This explains the issue we detected yesterday. Too bad. Worked
+  on creating our own laziness (`gjn_lazy`, what a branch name!), trying different
+  approached. A dummy approach is to apply laziness in chunks (get jobs in x chunks
+  at a time and pass them of to `pool.map_asyn`) once chunk at a time. When choosing
+  the chunks big enough, performance impact should be minimal. Also, there are
+  alternatives that are possoble.
+
+## Support
+
+* Could reach Mr. C from ZV. We need to support old ga API files because they can't
+  rollout an update in time. They should inform us when they are capable of doing so.
+
+## Admin
+
+* Kill office mails
+
 # Thursday, July 30th 2015
 
 ## MAP
