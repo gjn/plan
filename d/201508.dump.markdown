@@ -1,0 +1,22 @@
+---
+title: gjn - dump file of August 2015
+author: gjn
+date: 2015-08-04
+---
+
+# Top 5
+
+* 3d - correct url scheme for our terrain files
+* 3d - skipping tiles analysis
+* 3d service - transformations during import
+* 3d multiprocessing - inspired by tileforge.manager
+* Cesium PR
+
+# Next 10
+
+* varnish caching per vhost patch -> reply Cédric
+* varnish update to 4
+* static bod
+
+# The rest
+

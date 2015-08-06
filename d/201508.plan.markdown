@@ -1,0 +1,75 @@
+---
+title: gjn - plan file of August 2015
+author: gjn
+date: 2015-08-31
+---
+
+# Wednesday, August 5th 2015
+
+## 3D
+
+* Responded to gal's great analysis and overall improvements. Guy can code.
+
+## Jenkins
+
+* Created spreadsheet to keep track of jenkins failures and their reasons a little
+  more systematci than by emails.
+* Did run jenkins every hour during the night. We still have troubles with the
+  tooling we are using. Browserstack is not stable. Some of our tests are not
+  stable enough to be of value. This needs to be adressed. I hope I can move
+  people. 
+
+# Wednesday, August 5th 2015
+
+## 3D
+
+* Great kick-off meeting for 3D viewer inside map.geo.admin.ch. We have a good
+  team that will get it done. Still alot of open questions regarding data and
+  draping layers, etc. We will fully integrate it into our dev cycle (meaning, 3d
+  code will end up in master very soon) and make it activatable via switch.
+* We need to create most common layers as transformed tiles. Otherwise, mapproxy
+  is going to explode during development.
+* Some discussion about the strange artefacts with c2c people. Looks like gal is
+  on track to find something. When a viewer is your only debugging tool, you will
+  be slow. We should try to speed up this process altogether.
+
+## Deploy
+
+* Had to re-deploy bod to integration
+* Had to re-deploy bod to int/prod as well as ga3 snapshot to int/prod (bod was
+  configured wrongly)
+* Deploy process is botched because of caching issue. To really be sure, we need
+  to deploy ga3 twice in the future.
+
+## Jenkins
+
+* Replied to Matthiue about troubles we still have with new Jenkins instance.
+* Lots of stuff needed to be done to get Jenkins finally rolling. Among others a
+  really strange bug in ga3 unit tests that were just visible on the jenkins
+  instance.
+
+# Tuesday, August 4th 2015
+
+## MAP
+
+* Georanking and Data ranking. How can we satisfy our clients and still create a
+  reasonable user experience. How can we guide the user to new and exciting
+  information with discriminating _some_ clients. Is it even possible?
+* Some minor reviews.
+
+## 3D
+
+* Use tlm layer as default layer on application start of test application. TLM
+  will be the default layer in final application, so it kine of makes sense.
+* Flushing varnish takes some time...
+
+## Tools
+
+* Jenkins migration. Not as easy. We should start managing this stuff with puppet.
+  It's a pain with the rights and software packages installed/needed.
+
+## Admin
+
+* All those mails.
+
+
