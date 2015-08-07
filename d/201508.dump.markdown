@@ -10,10 +10,11 @@ date: 2015-08-04
 * 3d - skipping tiles analysis
 * 3d service - transformations during import
 * 3d multiprocessing - inspired by tileforge.manager
-* Cesium PR
+* add /var/log/tileforge to jenkins instance to fully enable jenkins integration
 
 # Next 10
 
+* Cesium PR
 * varnish caching per vhost patch -> reply Cédric
 * varnish update to 4
 * static bod

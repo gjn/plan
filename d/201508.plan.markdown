@@ -4,6 +4,46 @@ author: gjn
 date: 2015-08-31
 ---
 
+# Friday, August 7th 2015
+
+## Varnish
+
+* Varnish 503 errors. We believe it was change introduced in July 30th, that
+  increased ttl of S3 backed resources to 30 days. This lead to RAM limits of
+  varnish. This couldn't be observed before because we restarted varnish on a
+  regular basis...or to put it more correctly, the long url bug re-started varnish
+  randomly...
+
+## 3D
+
+* Finished poolmanager PR. Now db import is using the same class.
+* New terrain addresses are now active
+* Wrote code to copy existing terrain files to new url
+* Updated applications to use new official urls
+* Also updated ga3 application to use new official urls.
+* Added perimeter to layerjson branch of loic. We'll discuss Monday on what we
+  want to do with layer.json file (how to create, how to use, etc)
+
+## Jenkins
+
+* Looked at chsdi3 tests with generators. We have to call them explicitely in
+  jenkins, otherwise, they won't get executed. I've adapted the config accordingly
+  for api3.geo.admin.ch.
+
+# Thursday, August 6th 2015
+
+## 3D
+
+* Analysis of skipped tiles. They are skipped on borders of extent. The extent we
+  specify is never exactly what we really have. So global geodetic doesn't match.
+* Poolmanager created and re-factoring to increase readability of code. Also,
+  processing is much (37%) faster now (level 18 re-created in under 10 hours)
+* Discussion regarding layer.json.
+* Created 3d switch for mf-geoadmin3
+* Reviewed first PR of Oli for 3d
+* Initiated effort to have lazy loading of 3d libraries. It's mandatory for us.
+  Guillaume will investigate this using goog.module.
+
 # Wednesday, August 5th 2015
 
 ## 3D
