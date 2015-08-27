@@ -6,11 +6,25 @@ date: 2015-08-31
 
 # Thursday, August 27th 2015
 
+## Infrastructure
+* Another try to switch to varnish 4. Looking good so far...
+* Detected quite a few Mapserver segfaults on our production wms instances
+* Adapted a couple of kibana views.
+
 ## MAP
 * Reviewed the 3D Permalink PR by fredj
 * Reviewed the 3D layer synchro patch. Fantastic.
 * Reviewed a small fix by teo
 * Overlay to vector for markers reviewed. Not yet ready to be merged.
+* Detected bug that singleTile WMS in 3D is not a good idea :)
+
+## API
+* Tracked won profile 503 errors. Might be timeout of requests that happens when a
+  (long) request is aborted by the client. Proposed a PR. We'll see if it gets rid
+  of those
+* Fixed a potential devastating bug that would lead to a segfault of the
+  application when passing certain kinds of parameters. This affected a
+  considerable part of the application.
 
 # Wednesday, August 26th 2015
 
@@ -47,7 +61,7 @@ date: 2015-08-31
 
 # Tuesday, August 25th 2015
 
-## ***DOWNTIME***
+## DOWNTIME
 * We suffered another downtime on Saturday. Same pattern as the previous ones.
   It looks that 3 out of 4 downtimes are triggered by some very long identify
   requests a couple of minutes prior. Will try to reproduce now.
@@ -156,7 +170,7 @@ date: 2015-08-31
   postgres and Apache.
 * We can't reproduce it
 
-# 3D
+## 3D
 * Some optimisations and re-factoring to 3D-forge
 
 # Monday, August 10th 2015
