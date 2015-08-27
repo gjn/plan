@@ -1,21 +1,25 @@
 ---
 title: gjn - dump file of August 2015
 author: gjn
-date: 2015-08-04
+date: 2015-08-31
 ---
+
+# Vision
+
+* Best 3D cartography application on the web
+* Scale dynamically
+* Zero error tolerance with 100% code coverage
 
 # Top 5
 
-* 3d - correct url scheme for our terrain files
-* 3d - skipping tiles analysis
-* 3d service - transformations during import
-* 3d multiprocessing - inspired by tileforge.manager
-* add /var/log/tileforge to jenkins instance to fully enable jenkins integration
+* Fix Releases service
+* Check data transfer 3D tiles
+* Adapte nosetests refactoring PR (no nose-exclude)
+* Review 3D pull requests
+* Mapproxy left-of-Bern bug
 
 # Next 10
 
-* Cesium PR
-* varnish caching per vhost patch -> reply Cédric
 * varnish update to 4
 * static bod
 

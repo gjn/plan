@@ -4,6 +4,173 @@ author: gjn
 date: 2015-08-31
 ---
 
+# Thursday, August 27th 2015
+
+## MAP
+* Reviewed the 3D Permalink PR by fredj
+* Reviewed the 3D layer synchro patch. Fantastic.
+* Reviewed a small fix by teo
+* Overlay to vector for markers reviewed. Not yet ready to be merged.
+
+# Wednesday, August 26th 2015
+
+## Infrastructure
+* dev.bgdi.ch and jenkins was down. We had to revert to v3 yesterday with
+  everything. Still working on v4 integration (upgrade to 4.0.3 is going on
+  currently)
+
+## Deploy
+* Only bod, chsdi3 and ga3. We are getting rid of a couple of 500 errors with
+  this 
+
+## MAP
+* Switch to use tooltip/queryable attributes of layersconfig in front-end.
+* 3D permalink reviewed and tested. Still open issues.
+
+## API
+* Adapted result length fix to return 509 instead of 413, as this seems more
+  proper to us
+* Refactoring of folder setup of nosetests
+* Adding nose-exclude. But damn, does not work as advertised as you can't add
+  a list of directories. Bummer. Single directory only.
+* Added sphinx layers tests. We have mismatch between searchable attribute and
+  existing sphinx indices
+* Releases service seems to be buggy or we are passing the wrong parameters to
+  it for multi-page printing. The wrong model is selected.
+
+## 3D
+* Reviewed gal PR regarding using numpy for matrix stuff. This looks good.
+
+## Admin
+* Session with foa/gal regarding working pachages for new intern. After
+  introduction, will concentrate on testing and testing 70% coverage will be her goal.
+
+# Tuesday, August 25th 2015
+
+## ***DOWNTIME***
+* We suffered another downtime on Saturday. Same pattern as the previous ones.
+  It looks that 3 out of 4 downtimes are triggered by some very long identify
+  requests a couple of minutes prior. Will try to reproduce now.
+
+## Infrastructure
+* Switch to v4 could not be down. We quickly had ELB warnings about backends
+  that are down. Turns out that V4 still has alot of panics...
+
+## MAP
+* 3D background layer dicussion with moc. Glad that he starts seeing my
+  point the 3D is a mode, not a background layers. We also need some nice
+  3D presentations as teasers for some active layers. We don't have
+  anyone that could do 3D symbology..
+* Preparing deploy of tomorrow
+
+## API
+* Fix bug when we want to parse a feature from the db that is too long. We
+  suspect that this might also cause the mini downtimes we have observed.
+  This will be deployed tomorrow.
+
+## Admin
+* Get rid of all the mails
+
+# Friday, August 21st 2015
+
+## Map
+* Some reviews.
+
+## API
+* More work on tests.
+* Introduced possibility to manually test mako rendering for all features
+  to assure it really works under all conditions. It's still brute force 
+  and is not unittesting proper. We should separate python code from mako
+  rendering more thoroughly to allow for better unit testing with artifical
+  data that will cover all boder cases.
+
+# Thursday, August 20th 2015
+
+## Map
+* Quite a few reviews done. Good refactoring by teo to address 'time' in
+  the permalink alot better.
+
+## API
+* Worked mainly on improving tests.
+* Separated htmlPopup tests into separate file to better configure it and
+  to allow nosetests to show progress better. It's a little more pyhtonic
+  in that way.
+
+# Wednesday, August 19th 2015
+
+## Map
+* Deploy to fix offline. At the same time, we deployed 3D the first time
+  to production. For those who find it, it's a very early Alpha.
+* 3D View is progressing nicely. The framework is up and we are happy wit it.
+* Work on permalink support is now done, as well as other things
+* Had a good 3D meeting with the guys.
+
+## API
+* Working on improving the get tile tests. I think I've found a neat solution.
+
+## 3D
+* Data processing was stopped to adapt the data on the borders. Looks like 
+  mec has now found a good solution for this.
+* Still battling to share 1.5 TB of data. IT does not like shortcuts to take here
+  which of course slows down the process quite a bit.
+
+# Tuesday, August 18th 2015
+
+## Map
+* Great immersive 3D modes by Fréd and Guillaume. We also have a flight mode
+  now. I see great potential in it and when we have good data, this could
+  really boost 3D cartography/webmapping into new directions.
+* Lazy loading active. We'll deploy this to prod tomorrown (of course, still
+  disabled for normal users)
+* Some more test fistures to make Jenkins fail a little less often.
+* Some nasty apache configuration hack to fix offline because of how stupid 
+  appcache works (or does not work) with CORS resources over https. It's really
+  quite a big mess. I can't wait to use service workers for offline stuff.
+
+## 3D
+* Still waiting on data...
+
+
+# Wednesday, August 12th 2015
+
+## DOWNTIME
+* We suffered another downtime today. It had the same characteristics as the
+  previous ones.
+* We are stuck with it
+
+## Map
+* KML tests adapted a little bit to get rid of explicitly waiting for stuff
+* Lot's of stuff going on in the 3D Viewer. We are working on lazy loading of
+  all 3D related code. Once we have it, it'll be in master
+
+## Jenkins
+* Some adaptions to tests definitions. We don't run the gettiles test anymore.
+* We want to puppetize the proxy we use for e2e testing.
+
+
+# Tuesday, August 11th 2015
+
+## DOWNTIME
+
+* Analyisis going on. It's hard to pin down, but it seems between SQLAlchemy,
+  postgres and Apache.
+* We can't reproduce it
+
+# 3D
+* Some optimisations and re-factoring to 3D-forge
+
+# Monday, August 10th 2015
+
+## DOWNTIME
+
+* We suffered a 10 minute downtime on Sundy between 14:45 and 14:55
+* It's our usual apache congestion driven downtime, as first one instance started
+  to congest and taking down the other instance as well
+* This time, however, not clear why we have this congestion and the long request
+  times to begin with. It concerns multiple back-ends at the same time, but only
+  concerns *mod_wsgi* services, it seems.
+* This is going to be hard to track down...
+
 # Friday, August 7th 2015
 
 ## Varnish
